@@ -31,11 +31,12 @@ VALUES
   ('C', '2021-01-07', '3');
  
 
-CREATE TABLE menu (
-  "product_id" INTEGER,
-  "product_name" VARCHAR(5),
-  "price" INTEGER
-);
+CREATE TABLE menu 
+				(
+  				"product_id" INTEGER,
+  				"product_name" VARCHAR(5),
+  				"price" INTEGER
+				);
 
 INSERT INTO menu
   ("product_id", "product_name", "price")
@@ -177,3 +178,33 @@ SELECT s.customer_id, SUM (CASE WHEN m1.product_id = 1 OR s.order_date BETWEEN m
 WHERE m2.join_date IS NOT NULL AND s.order_date <= '2021-01-31'
 GROUP BY 1
 ORDER BY 1, 2;
+
+-- Bonus question #1: Join all the things
+SELECT s.customer_id, s.order_date, m1.product_name, m1.price, 
+	   CASE 
+	   	WHEN s.order_date >= m2.join_date THEN 'Y'
+	   	ELSE 'N'
+	   	END AS member
+	FROM sales AS s
+	LEFT JOIN members AS m2
+	ON s.customer_id = m2.customer_id
+	INNER JOIN menu AS m1
+	ON s.product_id = m1.product_id
+ORDER BY 1, 2, 3;
+
+-- Bonus question #2: Rank all the things
+WITH membership_status AS (
+							SELECT sales.customer_id, sales.order_date, menu.product_name, menu.price,
+							CASE WHEN sales.order_date >= members.join_date THEN 'Y'
+   						 	ELSE 'N'
+    						END AS member
+								FROM sales 
+								LEFT JOIN members ON sales.customer_id = members.customer_id
+								INNER JOIN menu ON sales.product_id = menu.product_id
+						  )
+SELECT *, 
+	CASE WHEN member = 'N' THEN Null
+    ELSE RANK () OVER (PARTITION BY customer_id, member ORDER BY order_date)
+    END AS ranking
+FROM membership_status
+ORDER BY customer_id,order_date;
