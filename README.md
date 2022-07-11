@@ -12,3 +12,43 @@ Danny has shared with you 3 key datasets for this case study:
 
 # Entity Relationship Diagram (ERD)
 ![dannys diner](https://user-images.githubusercontent.com/67700684/178267816-f5160b5f-d79a-4e00-9081-b9b76e2133e2.JPG)
+
+# Datasets
+- Sales
+
+![sales](https://user-images.githubusercontent.com/67700684/178272863-c3a74d54-4b56-42d9-9727-891cb5f1e879.JPG)
+
+- Menu
+
+![menu](https://user-images.githubusercontent.com/67700684/178272914-9ff98709-db4d-436e-b30f-34e067870051.JPG)
+
+- Members
+
+![image](https://user-images.githubusercontent.com/67700684/178272958-7a313624-e9b8-42cc-82fe-e3f300661b4b.png)
+
+# Questions
+1. What is the total amount each customer spent at the restaurant?
+
+2. How many days has each customer visited the restaurant?
+
+3. What was the first item from the menu purchased by each customer?
+
+4. What is the most purchased item on the menu and how many times was it purchased by all customers?
+
+5. Which item was the most popular for each customer?
+
+6. Which item was purchased first by the customer after they became a member?
+
+7. Which item was purchased just before the customer became a member?
+
+8. What is the total items and amount spent for each member before they became a member?
+
+9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
+
+10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
+
+# Bonus Questions
+1. Join all the things.
+Recreate the following table output using the available data:
+
+![image](https://user-images.githubusercontent.com/67700684/178274903-9d989928-ed6c-4fb8-86a2-4707a24df01e.png)
