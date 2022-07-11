@@ -1,7 +1,3 @@
-/* --------------------
-   Case Study #1 - Danny's Diner
-   --------------------*/
-
 CREATE SCHEMA dannys_diner;
 SET search_path = dannys_diner;
 
