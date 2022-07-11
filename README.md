@@ -49,6 +49,14 @@ Danny has shared with you 3 key datasets for this case study:
 
 # Bonus Questions
 1. Join all the things.
+
 Recreate the following table output using the available data:
 
 ![image](https://user-images.githubusercontent.com/67700684/178274903-9d989928-ed6c-4fb8-86a2-4707a24df01e.png)
+
+2. Rank all the things
+
+Danny also requires further information about the ranking of customer products, but he purposely does not need the ranking for non-member purchases so he expects null ranking values for the records when customers are not yet part of the loyalty program.
+
+![image](https://user-images.githubusercontent.com/67700684/178276965-ccae7c3c-9061-4927-a07f-ff34eac1b43c.png)
+
